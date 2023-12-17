@@ -133,7 +133,7 @@ elif app_mode == 'Prediction':
         # loaded_model = pickle.load(open('random_forest_model.sav', 'rb'))      
         # random_forest_model = joblib.load('random_forest_model.sav')
         # loaded_model = load('Project1_model.joblib')
-        with open('Loan_status_prediction/Project1_model.pkl', 'rb') as file:
+        with open('Project1_model.pkl', 'rb') as file:
             loaded_model = pickle.load(file)
         prediction = loaded_model.predict(single_sample)
         #st.write(prediction)
