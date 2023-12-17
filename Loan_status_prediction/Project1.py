@@ -39,7 +39,7 @@ if app_mode=='Home':
     st.markdown('Applicant Income versus Loan Amount for the First 10 Applicants')    
     st.bar_chart(data[['ApplicantIncome', 'LoanAmount']].head(10), color=['#DDA0DD', '#8B008B'])
     st.write("To access detailed information about the model, please check the Git repository.")
-    st.markdown("[Git Repository Link](https://github.com/your_username/your_repository)")
+    st.markdown("[Git Repository Link](https://github.com/RichaDivkar/Projects.git)")
     st.subheader('To check your loan status, please navigate to the prediction section in the sidebar.')
 
 elif app_mode == 'Prediction':    
