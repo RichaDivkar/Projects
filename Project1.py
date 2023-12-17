@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import base64
 import pickle  #to load a saved modelimport base64  #to open .gif files in streamlit app
-from joblib import load
+
 
 
 @st.cache_resource  
