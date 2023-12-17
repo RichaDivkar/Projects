@@ -23,7 +23,7 @@ app_mode = st.sidebar.selectbox('Select Page',['Home','Prediction']) #two pages
 
 if app_mode=='Home':    
     st.title('LOAN PREDICTION :')      
-    st.image('img1.jpg')  
+    st.image('Loan_status_prediction/img1.jpg')  
     st.markdown(
     '<p style="background-color:cornsilk;padding:10px">'
     'I created this machine learning web application for loan prediction based on a loan dataset shown below. '
@@ -34,7 +34,7 @@ if app_mode=='Home':
     unsafe_allow_html=True
 ) 
     st.subheader('Dataset :')    
-    data=pd.read_csv('loan_data_set.csv')    
+    data=pd.read_csv('Loan_status_prediction/loan_data_set.csv')    
     st.write(data.head())    
     st.markdown('Applicant Income versus Loan Amount for the First 10 Applicants')    
     st.bar_chart(data[['ApplicantIncome', 'LoanAmount']].head(10), color=['#DDA0DD', '#8B008B'])
@@ -43,7 +43,7 @@ if app_mode=='Home':
     st.subheader('To check your loan status, please navigate to the prediction section in the sidebar.')
 
 elif app_mode == 'Prediction':    
-    st.image('Loan_pred.jpg')    
+    st.image('Loan_status_prediction/Loan_pred.jpg')    
     st.subheader("Sir/Ma'am, please ensure all necessary information is filled out completely to receive a response to your loan request.") 
     st.markdown("Please click the 'Predict' button after entering the information.")
     st.sidebar.header("Informations about the client :")   
@@ -122,7 +122,7 @@ elif app_mode == 'Prediction':
     single_sample = np.array(feature_list).reshape(1,-1)
 
     if st.button("Predict"):        
-        file_ = open("6m-rain.gif", "rb")        
+        file_ = open("Loan_status_prediction/6m-rain.gif", "rb")        
         contents = file_.read()        
         data_url = base64.b64encode(contents).decode("utf-8")        
         file_.close()        
@@ -133,7 +133,7 @@ elif app_mode == 'Prediction':
         # loaded_model = pickle.load(open('random_forest_model.sav', 'rb'))      
         # random_forest_model = joblib.load('random_forest_model.sav')
         # loaded_model = load('Project1_model.joblib')
-        with open('Project1_model.pkl', 'rb') as file:
+        with open('Loan_status_prediction/Project1_model.pkl', 'rb') as file:
             loaded_model = pickle.load(file)
         prediction = loaded_model.predict(single_sample)
         #st.write(prediction)
