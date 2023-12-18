@@ -8,6 +8,6 @@ yfinance==0.1.54
 lxml==4.5.1
 pickle==4.0
 joblib==1.1.0
-cloudpickle
-sklearn
+cloudpickle==5.0
+
 
