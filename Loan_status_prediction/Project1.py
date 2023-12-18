@@ -129,9 +129,6 @@ elif app_mode == 'Prediction':
         contents = file.read()        
         data_url_no = base64.b64encode(contents).decode("utf-8")        
         file.close()        
-        # loaded_model = pickle.load(open('random_forest_model.sav', 'rb'))      
-        # random_forest_model = joblib.load('random_forest_model.sav')
-        # loaded_model = load('Project1_model.joblib')
         with open('Loan_status_prediction/Project1_model.pkl', 'rb') as file:
             loaded_model = pickle.load(file)
         
