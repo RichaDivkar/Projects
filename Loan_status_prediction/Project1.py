@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import base64
 import pickle  #to load a saved modelimport base64  #to open .gif files in streamlit app
+import cloudpickle
 
 
 @st.cache_resource  
@@ -132,8 +133,10 @@ elif app_mode == 'Prediction':
         # loaded_model = pickle.load(open('random_forest_model.sav', 'rb'))      
         # random_forest_model = joblib.load('random_forest_model.sav')
         # loaded_model = load('Project1_model.joblib')
-        with open('Loan_status_prediction/Project1_model.pkl', 'rb') as file:
-            loaded_model = pickle.load(file)
+        # with open('Loan_status_prediction/Project1_model.pkl', 'rb') as file:
+        #     loaded_model = pickle.load(file)
+        with open('model.pkl', 'rb') as file:
+            loaded_model = cloudpickle.load(file)
         prediction = loaded_model.predict(single_sample)
         #st.write(prediction)
 
