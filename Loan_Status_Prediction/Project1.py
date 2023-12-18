@@ -23,7 +23,7 @@ app_mode = st.sidebar.selectbox('Select Page',['Home','Prediction']) #two pages
 
 if app_mode=='Home':    
     st.title('LOAN PREDICTION :')      
-    st.image('img1.jpg')  
+    st.image('Loan_Status_Prediction/img1.jpg')  
     st.markdown(
     '<p style="background-color:cornsilk;padding:10px">'
     'I created this machine learning web application for loan prediction based on a loan dataset shown below. '
@@ -34,16 +34,16 @@ if app_mode=='Home':
     unsafe_allow_html=True
 ) 
     st.subheader('Dataset :')    
-    data=pd.read_csv('loan_data_set.csv')    
+    data=pd.read_csv('Loan_Status_Prediction/loan_data_set.csv')    
     st.write(data.head())    
     st.markdown('Applicant Income versus Loan Amount for the First 10 Applicants')    
     st.bar_chart(data[['ApplicantIncome', 'LoanAmount']].head(10), color=['#DDA0DD', '#8B008B'])
     st.write("To access detailed information about the model, please check the Git repository.")
-    st.markdown("[Git Repository Link](https://github.com/RichaDivkar/Projects.git)")
+    st.markdown("[Git Repository Link](https://github.com/RichaDivkar/Projects)")
     st.subheader('To check your loan status, please navigate to the prediction section in the sidebar.')
 
 elif app_mode == 'Prediction':    
-    st.image('Loan_pred.jpg')    
+    st.image('Loan_Status_Prediction/Loan_pred.jpg')    
     st.subheader("Sir/Ma'am, please ensure all necessary information is filled out completely to receive a response to your loan request.") 
     st.markdown("Please click the 'Predict' button after entering the information.")
     st.sidebar.header("Informations about the client :")   
@@ -122,11 +122,11 @@ elif app_mode == 'Prediction':
     single_sample = np.array(feature_list).reshape(1,-1)
 
     if st.button("Predict"):        
-        file_ = open("6m-rain.gif", "rb")        
+        file_ = open("Loan_Status_Prediction/6m-rain.gif", "rb")        
         contents = file_.read()        
         data_url = base64.b64encode(contents).decode("utf-8")        
         file_.close()        
-        file = open("noloans.gif", "rb")        
+        file = open("Loan_Status_Prediction/noloans.gif", "rb")        
         contents = file.read()        
         data_url_no = base64.b64encode(contents).decode("utf-8")        
         file.close()        
@@ -135,7 +135,7 @@ elif app_mode == 'Prediction':
         # loaded_model = load('Project1_model.joblib')
         # with open('Project1_model.pkl', 'rb') as file:
         #     loaded_model = pickle.load(file)
-        with open('Project1_model.pkl', 'rb') as file:
+        with open('Loan_Status_Prediction/Project1_model.pkl', 'rb') as file:
              loaded_model = pickle.load(file)
         prediction = loaded_model.predict(single_sample)
         #st.write(prediction)
